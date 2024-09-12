@@ -19,7 +19,7 @@ transformers==4.24.0
 
 # Dataset
 
-We provide datasets and model checkpoint under  
+We provide datasets and model checkpoint under https://zenodo.org/doi/10.5281/zenodo.12602593 .
 
 
 
