@@ -341,7 +341,6 @@ def parse_train_args() -> Namespace:
     """
     parser = ArgumentParser()
     add_train_args(parser)
-    #args = parser.parse_args()     #原始
     args = parser.parse_args([])
 
     return args
