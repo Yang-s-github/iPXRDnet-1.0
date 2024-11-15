@@ -29,12 +29,13 @@ We provide datasets and model checkpoint under https://zenodo.org/doi/10.5281/ze
 ```
 iPXRDnet_hMOF-130T: Python script for training adsorption predictions in the hMOF-130T database
 iPXRDnet_hmof-300T: Python script for training adsorption predictions in the hmof-300T database
-iPXRDnet_Sa: Python script for training separation selectivity predictions
+iPXRDnet_CO2,N2-Sa: Python script for training separation selectivity predictions
 iPXRDnet_SD: Python script for training self-diffusion coefficient predictions
 iPXRDnet_MOD: Python script for training bulk modulus and shear modulus predictions
 iPXRDnet_exAPMOF: Python script for training experimental adsorption isotherms of anion column MOFs using PXRD and material ligands
 iPXRDnet_exAPMOF-ALM: Python script for training experimental adsorption isotherms of anion column MOFs using material ligands only
 iPXRDnet_exAPMOF-PXRD: Python script for training experimental adsorption isotherms of anion column MOFs using PXRD only
+iPXRDnet_exAPMOF-PXRD-Ac-NOAC: Python script for training experimental adsorption isotherms of anion column MOFs using PXRD  after/before activation only
 iPXRDnet_exAPMOF-ISO: Python script for training experimental adsorption isotherms of anion column MOFs
 CMPNN_pretrain: Python script for pre-training CMPNN
 ```
