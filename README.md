@@ -37,5 +37,12 @@ iPXRDnet_exAPMOF-ALM: Python script for training experimental adsorption isother
 iPXRDnet_exAPMOF-PXRD: Python script for training experimental adsorption isotherms of anion column MOFs using PXRD only
 iPXRDnet_exAPMOF-PXRD-Ac-NOAC: Python script for training experimental adsorption isotherms of anion column MOFs using PXRD  after/before activation only
 iPXRDnet_exAPMOF-ISO: Python script for training experimental adsorption isotherms of anion column MOFs
+iPXRDnet_4gas: Python script for testing the model's prediction performance for H2, N2, CO2, and CH4 adsorption
+iPXRDnet_co-learning: Python script for testing the model's co-learning strategy
+iPXRDnet_hMOF-130T-GradCAM: Python script for drawing Grad-CAM heatmaps
+iPXRDnet_Model_robustness-step_size,XRD_size,noise: Python script for testing the model's prediction robustness
+iPXRDnet_UIO66: Python script for predicting CO2 adsorption of the Uio-66 series using the PXRD training model
+iPXRDnet_ZIF: Python script for predicting different gas adsorption of ZIF using the PXRD training model
+iPXRDnet_iMOF: Python script for predicting different gas adsorption of ionic MOFs using the PXRD training model
 CMPNN_pretrain: Python script for pre-training CMPNN
 ```
