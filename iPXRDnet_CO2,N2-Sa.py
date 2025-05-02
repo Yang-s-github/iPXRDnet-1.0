@@ -80,7 +80,7 @@ class XrdCNN(nn.Module):
         return regression_output
 
 adinfo_list_new = torch.load("/home/yzl/ML-XRD/data-2/SE-CO2,N2_data.pt")
-tgt = [0,1,2,7]#[0,1,3,4,6,14,15] # [0,1,3,4,6,]
+tgt = [7]#[0,1,3,4,6,14,15] # [0,1,3,4,6,]
 target_dict = ['CO2_Surf_m2/g', 'CO2_VFrac', 'Pore_1', 'CO2_Surf_m2/cm3', 'dense', 'Pore_3', 'wc', 'Sel']
 target_dict_selected=[]
 for i in range(len(tgt)):

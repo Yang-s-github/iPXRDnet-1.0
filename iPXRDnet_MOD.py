@@ -95,7 +95,7 @@ for i in data.keys():
         adinfo_list_new.append([i,xrd_ad_str_info])
 print(len(adinfo_list_new))
 del data,data_y_all
-tgt = [1,3,4,6,14, 15]
+tgt = [14, 15]
 target_dict = ['Di','Df','Dif','rho','VSA','GSA','VPOV','GPOV','POAV_vol_frac','PONAV_vol_frac','GPOAV','GPONAV','POAV','PONAV','KVRH','GVRH']
 target_dict_selected = []
 for i in range(len(tgt)):

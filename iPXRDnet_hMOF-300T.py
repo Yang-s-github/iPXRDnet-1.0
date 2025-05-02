@@ -80,7 +80,7 @@ class XrdCNN(nn.Module):
         return regression_output
 
 adinfo_list_new = torch.load("data/hmof-xrd+str+ad.pt")
-tgt = [0,3,6,13,16,18,19,20,21,22,23]
+tgt = [0,3,6,13,16]
 target_dict = ['CO2_uptake_P0.15bar_T298K [mmol/g]','heat_adsorption_CO2_P0.15bar_T298K [kcal/mol]','excess_CO2_uptake_P0.15bar_T298K [mmol/g]','CO2_uptake_P0.10bar_T363K [mmol/g]','heat_adsorption_CO2_P0.10bar_T363K [kcal/mol]','excess_CO2_uptake_P0.10bar_T363K [mmol/g]','CO2_uptake_P0.70bar_T413K [mmol/g]','heat_adsorption_CO2_P0.70bar_T413K [kcal/mol]','excess_CO2_uptake_P0.70bar_T413K [mmol/g]','working_capacity_vacuum_swing [mmol/g]','working_capacity_temperature_swing [mmol/g]','CO2_binary_uptake_P0.15bar_T298K [mmol/g]','heat_adsorption_CO2_binary_P0.15bar_T298K [kcal/mol]','excess_CO2_binary_uptake_P0.15bar_T298K [mmol/g]','N2_binary_uptake_P0.85bar_T298K [mmol/g]','heat_adsorption_N2_binary_P0.85bar_T298K [kcal/mol]','excess_N2_binary_uptake_P0.85bar_T298K [mmol/g]','CO2/N2_selectivity','surface_area [m^2/g]','void_fraction','void_volume [cm^3/g]','largest_free_sphere_diameter [A]','largest_included_sphere_along_free_sphere_path_diameter [A]','largest_included_sphere_diameter [A]']
 target_dict_selected=[]
 for i in range(len(tgt)):

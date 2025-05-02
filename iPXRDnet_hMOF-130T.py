@@ -109,7 +109,7 @@ class XrdCNN(nn.Module):
 all_adinfo_list_select=torch.load('data/hMOF-130T_ad_list_mof.pt')
 set_train,set_val,set_test=all_adinfo_list_select[0],all_adinfo_list_select[1],all_adinfo_list_select[2]
 
-tgt = [1,5,7,8]
+tgt = [8]
 target_dict = ['Di','Df','Dif','cm3_g','ASA_m^2/cm^3','ASA_m2_g','AV_VF','AV_cm3_g','Gas uptake']
 target_dict_selected = []
 for i in range(len(tgt)):

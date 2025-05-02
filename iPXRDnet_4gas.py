@@ -106,7 +106,7 @@ class XrdCNN(nn.Module):
         regression_output = self.out_regression(x)
         return regression_output
 
-tgt = [1,5,7,8]
+tgt = [8]
 target_dict = ['Di','Df','Dif','cm3_g','ASA_m^2/cm^3','ASA_m2_g','AV_VF','AV_cm3_g','Gas uptake']
 target_dict_selected = []
 for i in range(len(tgt)):

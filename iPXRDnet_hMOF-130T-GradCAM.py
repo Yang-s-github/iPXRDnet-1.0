@@ -120,7 +120,7 @@ class XrdCNN(nn.Module):
 all_adinfo_list_select=torch.load('data/hMOF-130T_ad_list_mof.pt')
 set_train,set_val,set_test=all_adinfo_list_select[0],all_adinfo_list_select[1],all_adinfo_list_select[2]
 
-tgt = [1,5,7,8,9,10,11]
+tgt = [8,9,10,11]
 target_dict = ['Di','Df','Dif','cm3_g','ASA_m^2/cm^3','ASA_m2_g','AV_VF','AV_cm3_g','Gas uptake CH4','Gas uptake N2','Gas uptake CO2','Gas uptake H2']
 target_dict_selected = []
 for i in range(len(tgt)):
@@ -163,7 +163,7 @@ print(scales)
 
 torch.cuda.set_device(0)
 device = torch.device("cuda")
-epochs = 120
+epochs = 30
 bestmse=1e30
 t1 = time()
 t2 = time()
@@ -183,7 +183,7 @@ print(total_steps,train_size,len(set_train))
 
 model=XrdCNN_P(tgt,min_max_pressure).cuda()
 num_train_optimization_steps = int(train_size * epochs)
-optim = torch.optim.AdamW(model.parameters(), lr=10.0e-5, weight_decay=multiple_weight_decay)
+optim = torch.optim.AdamW(model.parameters(), lr=20.0e-5, weight_decay=multiple_weight_decay)
 lr_scheduler =  transformers.get_linear_schedule_with_warmup(optim,int(num_train_optimization_steps *multiple_train_steps),num_train_optimization_steps)
 bestmse=1e30
 
@@ -361,10 +361,10 @@ for i in range(0,len(tgt),1):
     print(f'Test {target_dict[tgt[i]]} R2: {r2:.3f}, MAE: {mae:.3f}')
 
 
-torch.save(best_model.state_dict(),'model/hMOF-130T.pt')
+torch.save(best_model.state_dict(),'model/hMOF-130T-GradCAM.pt')
 
 #heatmap
-model_path =  'model/hMOF-130T.pt'
+model_path =  'model/hMOF-130T-GradCAM.pt'
 checkpoint = torch.load(model_path)
 model.load_state_dict(checkpoint)
 
@@ -418,10 +418,10 @@ for i in range(0,len(tgt),1):
 
 grad_cam = GradCAM(model, model.conv4)
 data_XRD_CAM,Gas_input_CAM,Pressure_input_CAM=data_XRD,Gas_input,Pressure_input
-heatmapCH4 = grad_cam.generate_cam(data_XRD_CAM,Gas_input_CAM,Pressure_input_CAM, target_category=3)
-heatmapN2 = grad_cam.generate_cam(data_XRD_CAM,Gas_input_CAM,Pressure_input_CAM, target_category=4)
-heatmapCO2 = grad_cam.generate_cam(data_XRD_CAM,Gas_input_CAM,Pressure_input_CAM, target_category=5)
-heatmapH2 = grad_cam.generate_cam(data_XRD_CAM,Gas_input_CAM,Pressure_input_CAM, target_category=6)
+heatmapCH4 = grad_cam.generate_cam(data_XRD_CAM,Gas_input_CAM,Pressure_input_CAM, target_category=0)
+heatmapN2 = grad_cam.generate_cam(data_XRD_CAM,Gas_input_CAM,Pressure_input_CAM, target_category=1)
+heatmapCO2 = grad_cam.generate_cam(data_XRD_CAM,Gas_input_CAM,Pressure_input_CAM, target_category=2)
+heatmapH2 = grad_cam.generate_cam(data_XRD_CAM,Gas_input_CAM,Pressure_input_CAM, target_category=3)
 
 
 INDEX_HAET=0

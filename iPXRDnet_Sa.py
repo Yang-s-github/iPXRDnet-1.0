@@ -84,7 +84,7 @@ DICT_XRD = torch.load('data/XRD_dict_ARCMOF.pt')
 adinfo_list_select=torch.load('data/data_ARCMOF.pt')
 target_dict = ['Density','ASA','vASA','gASA','GCD','Porosity','PV','PLD','LCD','CH4ABL','N2ABL','Sa','index','train']
 target_dict_selected = []
-tgt = [0,6,8,11]
+tgt = [11]
 for i in range(len(tgt)):
     target_dict_selected.append(target_dict[tgt[i]])
 print(target_dict_selected)

@@ -92,7 +92,7 @@ gas_dict=torch.load('data/gas_dict.pt')
   #              0    1    2     3           4            5        6         7
 target_dict = ['Di','Df','Dif','cm3_g','ASA_m^2/cm^3','ASA_m2_g','AV_VF','AV_cm3_g','diffusionofN2cm2s']
 target_dict_selected = []
-tgt = [1,4,6,8] 
+tgt = [8] 
 for i in range(len(tgt)):
     target_dict_selected.append(target_dict[tgt[i]])
 print(target_dict_selected)
